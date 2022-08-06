@@ -12,6 +12,7 @@ public class Demo {
         go6o.showReport();
         go6o.setHoursLeft(6);
          */
+
         Employee go6o = new Employee("Georgi");
         Employee pe6o = new Employee("Petar");
         Employee pe6ka = new Employee("Petra");

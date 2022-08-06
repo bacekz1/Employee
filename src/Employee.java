@@ -23,20 +23,11 @@ public class Employee {
         }
     }
 
-    void setCurrentTask(Task task) {
-        if (task == null) {
-            System.out.println("exception set Current task");
-        } else {
-            this.currentTask = task;
-        }
-        System.out.printf("%s get %s\n", name, currentTask.getName());
-    }
-
-    double getHoursLeft() {
+   private double getHoursLeft() {
         return hoursLeft;
     }
 
-    void setHoursLeft(double hoursLeft) {
+   private void setHoursLeft(double hoursLeft) {
         if (hoursLeft <= 0) {
             System.out.println("Working hours should be positive number");
         } else {
@@ -49,7 +40,7 @@ public class Employee {
     }
 
     void work() {
-        if (!isNull(currentTask)) {
+        if (!isNull(currentTask) && !isNull(allWork)) {
             if (currentTask.getWorkingHours() > hoursLeft) {
                 currentTask.setWorkingHours(currentTask.getWorkingHours() - getHoursLeft());
                 printJobAlreadyNotDone();
@@ -105,6 +96,10 @@ public class Employee {
 
     private boolean isNull(Task task) {
         return task == null;
+    }
+
+    private boolean isNull(AllWork allWork) {
+        return allWork == null;
     }
 
     private void print() {
