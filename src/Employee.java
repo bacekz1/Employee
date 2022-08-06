@@ -90,9 +90,9 @@ public class Employee {
                 this.currentTask.getWorkingHours(), currentTask.getName());
     }
 
-    private void printJobDone(double num) {
+    private void printJobDone(double hoursWork) {
         System.out.printf("%s work %.2f hours and %s is done\n"
-                , this.name, num, this.currentTask.getName());
+                , this.name, hoursWork, this.currentTask.getName());
     }
 
     void showReport() {
